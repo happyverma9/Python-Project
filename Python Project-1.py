@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 Normal_seat=1500
 VIP_seat=500
 import datetime
@@ -22,16 +16,22 @@ while True:
             if Normal_seat>0:
                 print("You have opted for Normal seat")
                 a = int(input("How many seats do you want?"))
-                total += (a * 200)
-                Normal_seat -= a
+                if a>Normal_seat:
+                    print("We only have", Normal_seat, "seats")
+                else:
+                    total += (a * 200)
+                    Normal_seat -= a
             else:
                 print("Sorry! We are house-full")
         elif x==2:
             if VIP_seat>0:
                 print("You have opted for VIP seat")
                 b = int(input("How many seats do you want?" ))
-                total += (b * 500)
-                VIP_seat -= b
+                if b>VIP_seat:
+                    print("We only have", VIP_seat, "seats")
+                else:
+                    total += (b * 500)
+                    VIP_seat -= b
             else:
                 print("Sorry! We are house-full")
         else:
@@ -49,10 +49,3 @@ while True:
             break
         elif s=="3":
             continue
-
-
-# In[ ]:
-
-
-
-
